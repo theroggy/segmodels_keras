@@ -43,7 +43,7 @@ def set_regularization(
     activity_regularizer=None,
     beta_regularizer=None,
     gamma_regularizer=None,
-    **kwargs,
+    **kwargs,  # noqa: ARG001
 ):
     """Set regularizers to all layers
 
