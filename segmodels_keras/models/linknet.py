@@ -1,13 +1,11 @@
-from keras_applications import get_submodules_from_kwargs
+from keras import backend
+from keras import layers
+from keras import models
+from keras import utils as keras_utils
 
 from ._common_blocks import Conv2dBn
-from ._utils import freeze_model, filter_keras_submodules
+from ._utils import freeze_model
 from ..backbones.backbones_factory import Backbones
-
-backend = None
-layers = None
-models = None
-keras_utils = None
 
 
 # ---------------------------------------------------------------------
@@ -231,11 +229,6 @@ def Linknet(
     .. _Linknet:
         https://arxiv.org/pdf/1707.03718.pdf
     """
-
-    global backend, layers, models, keras_utils
-    submodule_args = filter_keras_submodules(kwargs)
-    backend, layers, models, keras_utils = get_submodules_from_kwargs(submodule_args)
-
     if decoder_block_type == 'upsampling':
         decoder_block = DecoderUpsamplingX2Block
     elif decoder_block_type == 'transpose':
