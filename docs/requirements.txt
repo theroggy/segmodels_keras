@@ -1,2 +1,1 @@
-segmodels_keras
 sphinx_rtd_theme
