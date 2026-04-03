@@ -1,5 +1,6 @@
+############
 Installation
-============
+############
 
 **Requirements**
 
@@ -9,7 +10,7 @@ Installation
 
 .. note::
 
-    This library does not have Tensorflow_ in a requirements.txt
+    This library does not have Tensorflow_ configured as a hard dependency
     for installation. Please, choose suitable version ('cpu'/'gpu')
     and install it manually using official Guide_.
 

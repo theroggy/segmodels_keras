@@ -1,7 +1,8 @@
+import keras
+
 from segmodels_keras._compat import KERAS_GTE_3
 
 if KERAS_GTE_3:
-    import keras
     from keras import ops
 else:
     from keras import backend as ops

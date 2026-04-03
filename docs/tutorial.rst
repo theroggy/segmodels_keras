@@ -1,5 +1,7 @@
+###########
 Quick start
-~~~~~~~~~~~
+###########
+
 Since the library is built on the Keras framework, created segmentation model is just a
 Keras Model, which can be created as easy as:
 
@@ -28,8 +30,10 @@ Change input shape of the model:
 
     model = Unet('resnet50', input_shape=(None, None, 6), encoder_weights=None)
 
+
+************************
 Simple training pipeline
-~~~~~~~~~~~~~~~~~~~~~~~~
+************************
 
 .. code:: python
 
@@ -61,8 +65,11 @@ Simple training pipeline
        validation_data=(x_val, y_val),
    )
 
+
+********************
 Models and Backbones
-~~~~~~~~~~~~~~~~~~~~
+********************
+
 **Models**
 
 -  `Unet <https://arxiv.org/abs/1505.04597>`__
@@ -81,32 +88,31 @@ PSPNet        FPN
 |psp_image|   |fpn_image|
 ============= ==============
 
+
 .. _Unet: https://github.com/orthoseg/segmodels_keras/blob/main/LICENSE
 .. _Linknet: https://arxiv.org/abs/1707.03718
 .. _PSPNet: https://arxiv.org/abs/1612.01105
 .. _FPN: http://presentations.cocodataset.org/COCO17-Stuff-FAIR.pdf
 
-.. |unet_image| image:: https://cdn1.imggmi.com/uploads/2019/2/8/3a873a00c9742dc1fb33105ed846d5b5-full.png
-.. |linknet_image| image:: https://cdn1.imggmi.com/uploads/2019/2/8/1a996c4ef05531ff3861d80823c373d9-full.png
-.. |psp_image| image:: https://cdn1.imggmi.com/uploads/2019/2/8/aaabb97f89197b40e4879a7299b3c801-full.png
-.. |fpn_image| image:: https://cdn1.imggmi.com/uploads/2019/2/8/af00f11ef6bc8a64efd29ed873fcb0c4-full.png
+.. |unet_image| image:: _static/images/unet.png
+.. |linknet_image| image:: _static/images/linknet.png
+.. |psp_image| image:: _static/images/pspnet.png
+.. |fpn_image| image:: _static/images/fpn.png
 
 **Backbones**
 
-.. table::
-
-    =============  ===== 
-    Type           Names
-    =============  =====
-    VGG            ``'vgg16' 'vgg19'``
-    ResNet         ``'resnet50' 'resnet101' 'resnet152'``
-    ResNetV2       ``'resnet50v2' 'resnet101v2' 'resnet152v2'``
-    DenseNet       ``'densenet121' 'densenet169' 'densenet201'`` 
-    Inception      ``'inceptionv3' 'inceptionresnetv2'``
-    MobileNet      ``'mobilenet' 'mobilenetv2'``
-    EfficientNet   ``'efficientnetb0' 'efficientnetb1' 'efficientnetb2' 'efficientnetb3' 'efficientnetb4' 'efficientnetb5' 'efficientnetb6' 'efficientnetb7'``
-    EfficientNetV2 ``'efficientnetv2m'``    
-    =============  =====
+==============  ===== 
+Type            Names
+==============  =====
+VGG             ``'vgg16' 'vgg19'``
+ResNet          ``'resnet50' 'resnet101' 'resnet152'``
+ResNetV2        ``'resnet50v2' 'resnet101v2' 'resnet152v2'``
+DenseNet        ``'densenet121' 'densenet169' 'densenet201'`` 
+Inception       ``'inceptionv3' 'inceptionresnetv2'``
+MobileNet       ``'mobilenet' 'mobilenetv2'``
+EfficientNet    ``'efficientnetb0' 'efficientnetb1' 'efficientnetb2' 'efficientnetb3' 'efficientnetb4' 'efficientnetb5' 'efficientnetb6' 'efficientnetb7'``
+EfficientNetV2  ``'efficientnetv2m'``    
+==============  =====
 
 
 .. epigraph::
@@ -114,8 +120,9 @@ PSPNet        FPN
     (``encoder_weights='imagenet'``).
 
 
+***********
 Fine tuning
-~~~~~~~~~~~
+***********
 
 Some times, it is useful to train only randomly initialized
 *decoder* in order not to damage weights of properly trained
@@ -141,8 +148,9 @@ while initializing the model.
     model.fit(x, y, epochs=100)
 
 
+**************************
 Training with non-RGB data
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+**************************
 
 In case you have non RGB images (e.g. grayscale or some medical/remote sensing data)
 you have few different options:
