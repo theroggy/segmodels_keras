@@ -1,8 +1,10 @@
-import functools
+import functools  # noqa: I001
 import os
 
-from . import base
-from .__version__ import __version__
+# __version__ should be defined as soon as possible
+from segmodels_keras._version import __version__
+
+from segmodels_keras import base
 
 _KERAS_FRAMEWORK_NAME = "keras"
 _TF_KERAS_FRAMEWORK_NAME = "tf.keras"

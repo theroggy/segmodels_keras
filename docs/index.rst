@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+#############################################
 Welcome to the segmodels_keras documentation!
-===============================================
+#############################################
 
 This is a fork of the
 `segmentation_models <https://github.com/qubvel/segmentation_models>`__ library by
@@ -21,12 +22,11 @@ compatibility,... or support for all features is not guaranteed.
 
 **The main features** of this library are:
 
--  High level API (just two lines of code to create model for segmentation)
--  **4** models architectures for binary and multi-class image segmentation
-   (including legendary **Unet**)
--  **20+** available backbones for each architecture
--  All backbones have **pre-trained** weights for faster and better
-   convergence
+- High level API (just two lines of code to create model for segmentation)
+- **4** model architectures for binary and multi-class image segmentation
+  (including legendary **Unet**)
+- **20+** available backbones for each architecture
+- All backbones have **pre-trained** weights for faster and better convergence
 - Helpful segmentation losses (Jaccard, Dice, Focal) and metrics (IoU, F-score)
 
 
@@ -35,7 +35,7 @@ compatibility,... or support for all features is not guaranteed.
    :caption: Contents:
 
    install
-   user_guide
+   tutorial
    api
    support
 

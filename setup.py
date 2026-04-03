@@ -10,7 +10,7 @@ from setuptools import find_packages, setup
 # Package meta-data.
 NAME = "segmodels_keras"
 DESCRIPTION = "Image segmentation models with pre-trained backbones with Keras."
-URL = "https://github.com/theroggy/segmodels_keras"
+URL = "https://github.com/orthoseg/segmodels_keras"
 EMAIL = "pieter.roggemans@gmail.com"
 AUTHOR = "Pieter Roggemans"
 REQUIRES_PYTHON = ">=3.0.0"
@@ -24,7 +24,7 @@ VERSION = None
 here = os.path.abspath(os.path.dirname(__file__))
 
 # What packages are required for this module to be executed?
-REQUIRED = ["keras"]
+REQUIRED = ["keras", "packaging"]
 
 # What packages are optional?
 EXTRAS = {
@@ -39,10 +39,10 @@ try:
 except FileNotFoundError:
     long_description = DESCRIPTION
 
-# Load the package's __version__.py module as a dictionary.
+# Load the package's _version.py module as a dictionary.
 about = {}
 if not VERSION:
-    with open(os.path.join(here, NAME, "__version__.py")) as f:
+    with open(os.path.join(here, NAME, "_version.py")) as f:
         exec(f.read(), about)
 else:
     about["__version__"] = VERSION
