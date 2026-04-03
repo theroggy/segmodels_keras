@@ -42,7 +42,7 @@ except FileNotFoundError:
 # Load the package's __version__.py module as a dictionary.
 about = {}
 if not VERSION:
-    with open(os.path.join(here, NAME, "__version__.py")) as f:
+    with open(os.path.join(here, NAME, "version.py")) as f:
         exec(f.read(), about)
 else:
     about["__version__"] = VERSION

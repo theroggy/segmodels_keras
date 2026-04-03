@@ -1,10 +1,9 @@
 import functools
 import os
 
-__versioninfo__ = (0, 1, 0, "dev0")
-__version__ = ".".join(map(str, __versioninfo__))
+from _version import __version__
 
-from . import base
+from segmodels_keras import base
 
 _KERAS_FRAMEWORK_NAME = "keras"
 _TF_KERAS_FRAMEWORK_NAME = "tf.keras"
