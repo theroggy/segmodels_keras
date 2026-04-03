@@ -1,6 +1,7 @@
 ###########
 Quick start
 ###########
+
 Since the library is built on the Keras framework, created segmentation model is just a
 Keras Model, which can be created as easy as:
 
@@ -28,6 +29,7 @@ Change input shape of the model:
 .. code:: python
 
     model = Unet('resnet50', input_shape=(None, None, 6), encoder_weights=None)
+
 
 ************************
 Simple training pipeline
@@ -63,6 +65,7 @@ Simple training pipeline
        validation_data=(x_val, y_val),
    )
 
+
 ********************
 Models and Backbones
 ********************
@@ -84,6 +87,7 @@ PSPNet        FPN
 ============= ==============
 |psp_image|   |fpn_image|
 ============= ==============
+
 
 .. _Unet: https://github.com/orthoseg/segmodels_keras/blob/main/LICENSE
 .. _Linknet: https://arxiv.org/abs/1707.03718

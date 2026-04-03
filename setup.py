@@ -24,7 +24,7 @@ VERSION = None
 here = os.path.abspath(os.path.dirname(__file__))
 
 # What packages are required for this module to be executed?
-REQUIRED = ["keras"]
+REQUIRED = ["keras", "packaging"]
 
 # What packages are optional?
 EXTRAS = {
