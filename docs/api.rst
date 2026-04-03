@@ -1,6 +1,6 @@
-segmodels_keras Python API
-==============================
-
+#############
+API Reference
+#############
 
 Getting started is easy.
 
