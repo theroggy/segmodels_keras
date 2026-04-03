@@ -1,2 +1,2 @@
-keras==3.13
+keras==3.13.2
 sphinx_rtd_theme
