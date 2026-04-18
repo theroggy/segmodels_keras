@@ -2,7 +2,7 @@ import keras.applications as ka
 
 from . import inception_resnet_v2 as irv2
 from . import inception_v3 as iv3
-from . import resnet
+from . import resnet_18_34
 
 
 class BackbonesFactory:
@@ -17,17 +17,22 @@ class BackbonesFactory:
     """
 
     _models = {  # noqa: RUF012
-        # ResNets < 50 layers are NOT available via keras.applications, so use
-        # implementation from classification_models.
+        # ResNets < 50 layers are NOT available via keras.applications, so use a
+        # torchvision-compatible post-activation BasicBlock implementation.
+        # Layer names follow the keras.applications ResNet50+ naming convention.
         "resnet18": (
-            resnet.ResNet18,
-            resnet.preprocess_input,
-            ("stage4_unit1_relu1", "stage3_unit1_relu1", "stage2_unit1_relu1", "relu0"),
+            resnet_18_34.ResNet18,
+            resnet_18_34.preprocess_input,
+            # resnet18: layer1=2, layer2=2, layer3=2, layer4=2 blocks
+            # backbone output = conv5_block2_out (512ch); skips are the 4 stages before it
+            ("conv4_block2_out", "conv3_block2_out", "conv2_block2_out", "conv1_relu"),
         ),
         "resnet34": (
-            resnet.ResNet34,
-            resnet.preprocess_input,
-            ("stage4_unit1_relu1", "stage3_unit1_relu1", "stage2_unit1_relu1", "relu0"),
+            resnet_18_34.ResNet34,
+            resnet_18_34.preprocess_input,
+            # resnet34: layer1=3, layer2=4, layer3=6, layer4=3 blocks
+            # backbone output = conv5_block3_out (512ch); skips are the 4 stages before it
+            ("conv4_block6_out", "conv3_block4_out", "conv2_block3_out", "conv1_relu"),
         ),
         # ResNets > 50 layers are available via keras.applications, so use those.
         # Skip layers (inverted) from https://github.com/yingkaisha/keras-unet-collection
