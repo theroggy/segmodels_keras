@@ -4,21 +4,15 @@ API Reference
 
 Getting started is easy.
 
-Unet
-~~~~
+Segmentation models
+~~~~~~~~~~~~~~~~~~~
 .. autofunction:: segmodels_keras.Unet
-
-Linknet
-~~~~~~~
 .. autofunction:: segmodels_keras.Linknet
-
-FPN
-~~~
 .. autofunction:: segmodels_keras.FPN
-
-PSPNet
-~~~~~~
 .. autofunction:: segmodels_keras.PSPNet
+.. autofunction:: segmodels_keras.get_available_backbone_names
+.. autofunction:: segmodels_keras.get_preprocessing
+.. autofunction:: segmodels_keras.get_model
 
 metrics
 ~~~~~~~
@@ -38,3 +32,4 @@ utils
 ~~~~~
 .. autofunction:: segmodels_keras.utils.set_trainable
 .. autofunction:: segmodels_keras.utils.save_model_weights_notop
+.. autofunction:: segmodels_keras.utils.load_weights
