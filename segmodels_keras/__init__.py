@@ -1,3 +1,5 @@
+"""Segmentation Models for Keras."""
+
 import functools  # noqa: I001
 import os
 from typing import Any
@@ -43,12 +45,12 @@ def filter_kwargs(func: Callable[..., Any]) -> Callable[..., Any]:
 
 
 def framework() -> str | None:
-    """Return name of Segmentation Models framework"""
+    """Return name of Segmentation Models framework."""
     return _KERAS_FRAMEWORK
 
 
 def set_framework(name: str) -> None:
-    """Set framework for Segmentation Models
+    """Set framework for Segmentation Models.
 
     Args:
         name (str): one of ``keras``, ``tf.keras``, case insensitive.
@@ -118,6 +120,7 @@ get_available_backbone_names = Backbones.models_names
 
 
 def get_preprocessing(name: str) -> Callable[[Any], Any]:
+    """Get the preprocessing function for a backbone by name."""
     return Backbones.get_preprocessing(name)
 
 

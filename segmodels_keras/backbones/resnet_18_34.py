@@ -109,7 +109,6 @@ def ResNet(
     Returns:
         A ``keras.Model`` instance.
     """
-
     # Determine proper input shape
     input_shape = _obtain_input_shape(
         input_shape,
@@ -358,6 +357,9 @@ def preprocess_input(x, data_format=None):
 
     Args:
         x: a 4D numpy array consists of RGB values within [0, 255].
+        data_format: image data format, either "channels_first" or
+            "channels_last". Defaults to the value found in
+            `keras.backend.image_data_format()`.
 
     Returns:
         Preprocessed array.
