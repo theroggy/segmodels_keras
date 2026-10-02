@@ -58,7 +58,7 @@ jobs:
             python: "3.12"
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       # - name: Set environment variables
       #   run: echo "PYTHONTRACEMALLOC=1" >> $GITHUB_ENV
@@ -84,4 +84,4 @@ jobs:
           --cov=segmodels_keras --cov-append --cov-report term-missing --cov-report 
           xml tests/
 
-      - uses: codecov/codecov-action@v6
+      - uses: codecov/codecov-action@v7
